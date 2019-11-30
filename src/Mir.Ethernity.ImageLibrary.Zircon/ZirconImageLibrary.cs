@@ -13,7 +13,7 @@ namespace Mir.Ethernity.ImageLibrary.Zircon
 
         public string Name { get; private set; }
 
-        public int Length { get; private set; }
+        public int Length { get => _images?.Length ?? 0; }
 
         public ZirconImageLibrary(string name, Stream stream)
         {
