@@ -16,19 +16,5 @@ namespace Mir.Ethernity.ImageLibrary.Zircon.Tests
                 Assert.AreEqual("Equip", lib.Name);
             }
         }
-
-        [TestMethod]
-        public void LoadImageCompressed()
-        {
-            using (var fs = File.OpenRead("./Resources/Interface1c.Zl"))
-            {
-                var lib = new ZirconImageLibrary("Interface1c", fs);
-                var image = lib[2200];
-                var data = image.GetData(ImageType.Image);
-
-                Assert.AreEqual(ImageDataType.Dxt1, data.Type);
-                Assert.AreEqual((image.Image.Width * image.Image.Height) / 2, data.Buffer.Length);
-            }
-        }
     }
 }
