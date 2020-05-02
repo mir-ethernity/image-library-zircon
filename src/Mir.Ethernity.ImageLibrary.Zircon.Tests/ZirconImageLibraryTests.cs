@@ -12,7 +12,8 @@ namespace Mir.Ethernity.ImageLibrary.Zircon.Tests
             using (var fs = File.OpenRead("./Resources/Equip.Zl"))
             {
                 var lib = new ZirconImageLibrary("Equip", fs);
-                Assert.AreEqual(6250, lib.Length);
+                lib.Initialize();
+                Assert.AreEqual(6250, lib.Count);
                 Assert.AreEqual("Equip", lib.Name);
             }
         }
